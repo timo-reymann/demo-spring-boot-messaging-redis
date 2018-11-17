@@ -1,6 +1,8 @@
 package de.timo_reymann.redis_event_demo.bean;
 
 /**
+ * Example bean for a simple message wrapped into an object
+ *
  * @author Timo Reymann
  * @since 17.11.18
  */

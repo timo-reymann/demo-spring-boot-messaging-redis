@@ -9,7 +9,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 
 /**
- * Implementation for an example notification receiver
+ * Implementation for the {@link MessageListener}
  *
  * @author Timo Reymann
  * @since 16.11.18
@@ -26,6 +26,9 @@ public class NotificationReceiverImpl implements MessageListener {
     public void onMessage(Message message, byte[] bytes) {
         log.info("Parsed message content_ {} >> {}", getChannel(message), getPayload(message));
         log.info("Raw message: {}", deserialize(message));
+
+        // Here you can handle the logic than an event occurs, this method is called for the application itself and all other applications
+        // listening to the redis event
     }
 
     private String getChannel(Message message) {

@@ -1,5 +1,6 @@
 spring:
   redis:
     port: 61613
+    timeout: 3s
 server:
   port: 0
